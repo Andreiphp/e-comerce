@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { Route } from 'react-router-dom';
+import HomeContainer from './components/home/homeContainer';
+import HeaderComponent from './components/header/header';
+import SearchPageComponent from './components/search-page/search-page-component';
+function App(props) {
+  console.log(props);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <main className="">
+      <header>
+        <HeaderComponent />
       </header>
-    </div>
+      <Route path="/home" render={() => <HomeContainer />}></Route>
+      <Route path="/search" render={() => <SearchPageComponent/>}></Route>
+      {/* <Route path="/hit" render={() => { <HitContainer /> }}></Route>
+      <Route path="/brands" render={() => { <BrandsContainer /> }}></Route>
+      <Route path="/about" render={() => { <aboutContainer /> }}></Route>
+      <Route path="/contacts" render={() => { <contactsContainer /> }}></Route>
+      <Route path="/cart" render={() => { <cartContainer /> }}></Route> */}
+    </main>
   );
 }
 

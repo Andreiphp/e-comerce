@@ -1,0 +1,16 @@
+.e-header-logo {
+    position: relative;
+    width: 25%;
+}
+.e-header-logo .e-search {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.e-header-logo .logo {
+    display: inline-block;
+    max-width: 160px;
+}
+.e-search {
+    display: inline-block;
+    width: 50%;
+}
