@@ -40,6 +40,30 @@
   align-items: center;
 }
 
+.e-sidebar {
+  width: 25%;
+}
+.e-content {
+  width: 75%;
+}
+.e-catName {
+  font-weight: 600;
+  color: #222;
+}
+.e-catName a {
+  color: #333e48;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
+}
+.e-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

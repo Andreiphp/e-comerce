@@ -3,6 +3,7 @@ import './header.css';
 import { NavLink } from 'react-router-dom';
 import logos from './../../assets/image/logo.jpg';
 import SearchContainer from './../search/search-container';
+import SmallCartContainerComponent from '../small-cart/small-cart.container.component';
 const HeaderComponent = (props) => {
 
     return <div className="">
@@ -18,7 +19,7 @@ const HeaderComponent = (props) => {
                         <SearchContainer />
                     </div>
                     <div className="e-cart-box">
-
+                        <SmallCartContainerComponent/>
                     </div>
                 </div>
             </div>

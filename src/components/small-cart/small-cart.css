@@ -1,0 +1,28 @@
+.e-small-cart {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    height: 100px;
+}
+.e-cart {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    color: #222;
+    height: 44px;
+    cursor: pointer;
+
+}
+.e-cart-count {
+    position: relative;
+    border-left: 1px solid #fff;
+    padding-left: 10px;
+    margin-left: 12px;
+}
+.e-cart-count span {
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    max-width: 80px;
+}
