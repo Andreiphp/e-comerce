@@ -1,7 +1,6 @@
-.e-slider-small
+.e-slider-rec
     margin: 50px 0
     width: 100%
-    height: 300px
     overflow: hidden
     .e-slider-nav
         width: 100%
@@ -36,6 +35,7 @@
             .e-sl-stage
                 display: flex
                 align-items: center
+                flex-wrap: wrap
                 transition: transform 1.5s ease 0s  
                 .e-sl-item
                     width: 350px
@@ -46,7 +46,6 @@
                             display: flex
                             border: 1px solid #eeeeee
                             width: 100%
-                        @at-root 
                             .e-sl-img
                                 position: relative
                                 overflow: hidden
@@ -58,16 +57,28 @@
                                 background-color: #fafafa
                                 padding-top: 15px
                                 padding-bottom: 15px
-.hide_title
-    display: none
-.position_center
-    justify-content: center
-    height: 150px
-    .e-sl-img
-        text-align: center
-        width: 100%
-        height: 100%
-        img
-            width: auto
-            height: inherit
-            display: inline-block                            
+.e-slider-tabs
+    ul
+        display: flex
+        align-items: center
+        justify-content: center
+        list-style-type: none
+        li
+            span
+                background: #fff
+                color: #222
+                display: block
+                font-size: 14px
+                line-height: 40px
+                letter-spacing: .4px
+                line-height: 1
+                margin: 0
+                padding: 12px 15px
+                position: relative
+                font-family: 'Poppins',sans-serif
+                font-weight: 400
+                text-transform: uppercase
+                border: 1px solid transparent
+                border-bottom: none
+            span .active
+                border-color: blue;    

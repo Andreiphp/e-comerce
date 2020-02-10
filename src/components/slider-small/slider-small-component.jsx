@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './slider-small.sass';
 const SliderProduct = (props) => {
     const [count, setcount] = useState(0);
+    const [flagUploads, setUploads] = useState(false);
     const [visibleSliders, setVisiblesliders] = useState(3)
     const [sliderWidth, setWidth] = useState(0);
     const [styleSlider, setStyle] = useState({
@@ -25,6 +26,7 @@ const SliderProduct = (props) => {
             outerTransform: { transform: 0 },
         });
         setWidth(mainwidth);
+        setUploads(true)
         window.addEventListener('resize', () => {
             setWidth(defaultelenet.getBoundingClientRect().width);
         });
@@ -45,16 +47,20 @@ const SliderProduct = (props) => {
             outerTransform: { transform: sets() },
         });
         function sets() {
+            let counts = count;
+            let returnTransform;
             if (count === 0) {
-                setcount(count + 1);
-                return styleSlider.outerTransform.transform - styleSlider.item.width;
+                counts++;
+                returnTransform = styleSlider.outerTransform.transform - styleSlider.item.width;
             } else if (count + visibleSliders === props.products.length) {
-                setcount(count - 1);
-                return styleSlider.outerTransform.transform + styleSlider.item.width;
+                counts--;
+                returnTransform = styleSlider.outerTransform.transform + styleSlider.item.width;
             } else {
-                setcount(count + 1);
-                return styleSlider.outerTransform.transform - styleSlider.item.width;
+                counts++;
+                returnTransform = styleSlider.outerTransform.transform - styleSlider.item.width;
             }
+            setcount(counts);
+            return returnTransform;
         }
     }
     function activecontrolRigth() {
@@ -63,29 +69,33 @@ const SliderProduct = (props) => {
             item: { ...styleSlider.item },
             outerTransform: { transform: sets() },
         });
-        function sets() {
+        function sets() { // todo 2 ф-ции вынести в одну
+            let counts = count;
+            let returnTransform;
             if (count + visibleSliders === props.products.length) {
-                setcount(count - 1);
-                return styleSlider.outerTransform.transform + styleSlider.item.width;
+                counts--;
+                returnTransform = styleSlider.outerTransform.transform + styleSlider.item.width;
             } else if (count === 0) {
-                setcount(count + 1);
-                return styleSlider.outerTransform.transform - styleSlider.item.width;
-            }   else {
-                setcount(count - 1);
-                return styleSlider.outerTransform.transform + styleSlider.item.width;
+                counts++;
+                returnTransform = styleSlider.outerTransform.transform - styleSlider.item.width;
+            } else {
+                counts--;
+                returnTransform = styleSlider.outerTransform.transform + styleSlider.item.width;
             }
+            setcount(counts);
+            return returnTransform;
         }
     }
     return <div className="e-slider-small">
         <div className="e-slider-nav e-flex">
-            <span className="e-slider-title">Популярное</span>
+            <span className="e-slider-title">{props.title}</span>
             <div className="e-slider-control e-flex">
                 <span onClick={activecontrolLeft} className="e-s-control-left">&lt;</span>
                 <span onClick={activecontrolRigth} className="e-s-control-rigth">&gt;</span>
             </div>
         </div>
         <div className="e-slider-courusel">
-            {count}
+            {!flagUploads ? 'загрузка' : ''}
             <div id="e-slider-outer" className="e-slider-outer">
                 <div className="e-sl-stage"
                     style={{ width: styleSlider.outer.width, transform: "translate(" + styleSlider.outerTransform.transform + 'px,' + " 0px)" }}>
@@ -94,13 +104,13 @@ const SliderProduct = (props) => {
                         return <div key={product.id} className="e-sl-item" style={styleSlider.item}>
                             <div className="e-sl-item-inner">
                                 <div className="e-item">
-                                    <div className="e-sl-body">
+                                    <div className={props.type === 'brands' ? 'e-sl-body position_center' : 'e-sl-body'}>
                                         <div className='e-sl-img'>
                                             <img src={image}></img>
                                         </div>
-                                        <div className="e-sl-title">
+                                        <div className={ props.type === 'brands' ? 'e-sl-title hide_title' : 'e-sl-title'}>
                                             <h2 className="e-catName">
-                                                <a> Smartphones</a>
+                                                <a>{product.name}</a>
                                             </h2>
                                         </div>
                                     </div>
