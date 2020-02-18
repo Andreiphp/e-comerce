@@ -6,7 +6,7 @@ const SliderRecomended = (props) => {
     const [sliders, setSliders] = useState([]);
     const [activeTabs, setActiveTabs] = useState(0);
     const [flagUploads, setUploads] = useState(false);
-    const [visibleSliders, setVisiblesliders] = useState(3)
+    const [visibleSliders, setVisiblesliders] = useState(3);
     const [sliderWidth, setWidth] = useState(0);
     const [styleSlider, setStyle] = useState({
         outer: {
