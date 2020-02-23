@@ -32,7 +32,6 @@ const HomeContainer = (props) => {
                 {id: '4', name: 'ytrewq', img: '8.jpg', link: ''},
                 {id: '5', name: 'ytrewq', img: '9.jpg', link: ''},
                 {id: '6', name: 'ytrewq', img: '10.jpg', link: ''},
-                {id: '7', name: 'ytrewq', img: '13.jpg', link: ''},
         ]}/>
         </div>
     </>

@@ -15,5 +15,7 @@ export const SearchReducer = (state = initial, action) => {
 };
 
 export const searchCreator = (products, count) => {
+    console.log('we');
+    
     return { type: 'search', products: products, count: count }
 }
