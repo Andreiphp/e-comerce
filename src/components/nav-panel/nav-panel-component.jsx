@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './nav-panel-component.sass';
+import Category from '../common/category/category-component';
 const NavPanellFull = (props) => {
     return <div className="e-nav-full">
         <div className="e-container">
             <div className="e-nav-wrapper">
                 <div className="e-panel-cat">
-                    <p>category</p>
+                    <Category/>
                 </div>
                 <div className="e-menu">
                     <ul>

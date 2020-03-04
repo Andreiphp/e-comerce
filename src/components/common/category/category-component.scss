@@ -1,0 +1,42 @@
+.e-category {
+    width: 100%;
+    position: relative;
+    background-color: #ffdc52;
+    .category-block{ 
+        color: #222;
+        font-size: 16px;
+        height: 61px;
+        line-height: 60px;
+        font-weight: 500;
+        padding: 0 15px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .categories-items {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background-color: white;
+        border: 1px solid #e2e2e2;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                border-left: 5px solid transparent;
+                padding: 5px 10px 5px;
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-weight: normal;
+                    border-bottom: 1px solid transparent;
+                    color: #000;
+                    border-bottom-color: #e2e2e2
+                }
+            }
+        }
+    }
+}
