@@ -5,7 +5,8 @@ import logos from './../../assets/image/logo.jpg';
 import SearchContainer from './../search/search-container';
 import SmallCartContainerComponent from '../small-cart/small-cart.container.component';
 const HeaderComponent = (props) => {
-
+    console.log('header');
+    
     return <div className="">
         <div className="e-header-top">
             <div className="e-container">
@@ -16,7 +17,7 @@ const HeaderComponent = (props) => {
                         </NavLink >
                     </div>
                     <div className="e-search">
-                        <SearchContainer />
+                        <SearchContainer/>
                     </div>
                     <div className="e-cart-box">
                         <SmallCartContainerComponent/>

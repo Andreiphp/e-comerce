@@ -19,11 +19,10 @@ const ProductList = (props) => {
                     <div className="e-product-description">
                         <h2>{props.product.name}</h2>
                         <div className="e-product-price">
-                            <span>{110}</span>
+                            <span>{props.product.price}</span>
                         </div>
                         <div className="e-product-description-short">
-                            dasddASD SAdASDasd dsadaDSADS GFGHFDGH dfgdfgdfgd
-                            dsfsadfadfa dasfgasgdf
+                          {props.product.minidescription}
                         </div>
                         <div className="e-product-actions">
                             <ul>

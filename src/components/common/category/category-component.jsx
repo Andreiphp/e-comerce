@@ -34,9 +34,7 @@ const Category = (props) => {
                 {ItemsCategories(category)}
             </ul>
         </div>
-        
     }
-       
     </div>
 }
 

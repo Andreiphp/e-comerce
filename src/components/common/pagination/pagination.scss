@@ -1,0 +1,17 @@
+.e-pagination {
+    ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        li {
+            margin: 0 5px;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+            &.active {
+                color: red;
+            }
+        }
+    }
+}

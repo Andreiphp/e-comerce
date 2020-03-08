@@ -1,7 +1,7 @@
 import React from 'react';
 import './small-cart.css';
 const SmallCartComponent = (props) => {
-    console.log(props);
+    console.log('small cart');
 
     function deleteProduct(id) {
         props.deleteProductAction(id);

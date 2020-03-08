@@ -8,6 +8,8 @@ import NavPanellFull from './components/nav-panel/nav-panel-component';
 import BestContainer from './components/bests/bests-container';
 import { SelectionContext, position } from './context/selection-view';
 import Axios from 'axios';
+import CategoriesComponent from './components/categories/categories-component';
+import CategoriesList from './components/categories/categories-list.component';
 function App(props) {
   Axios.post('http://localhost:8080/router/authenticate', {
     login: 'werty@yandex.by',
@@ -35,9 +37,13 @@ function App(props) {
         </div>
         <SelectionContext.Provider value={viewPosition}>
           <section className="e-content">
-            <Route path="/home" render={() => <HomeContainer />}></Route>
-            <Route path="/best" render={() => <BestContainer />}></Route>
-            <Route path="/search" render={() => <SearchPageComponent />}></Route>
+            <Route exact path="/" render={() => <HomeContainer />}></Route>
+            <Route  path="/home" render={() => <HomeContainer />}></Route>
+            <Route  path="/best" render={() => <BestContainer />}></Route>
+            <Route  path="/search" render={() => <SearchPageComponent />}></Route>
+            <Route exact path="/category" render={() => <CategoriesComponent />}></Route>
+            <Route exact path="/category/:id" component={CategoriesList}></Route>
+            {/* <Route render={() => <div>not found</div>}></Route> */}
           </section>
         </SelectionContext.Provider>
       </div>

@@ -14,9 +14,7 @@ function ActionPreview(products, close, startsearch) {
 }
 const SearchComponent = ({ onChange, preview, flagOpen, close: closeProps, startsearch }) => {
     const rev = useRef('');
-    console.log(rev);
-    
-    function close () {
+    function close() {
         rev.current.value = '';
         closeProps(false);
     }

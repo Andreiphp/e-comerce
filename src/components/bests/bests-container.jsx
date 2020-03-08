@@ -7,6 +7,7 @@ import { useState } from 'react';
 import BestProducts from './bests-products.component';
 import { useEffect } from 'react';
 export const BestContainer = (props) => {
+    console.log('beast page');
     const [products, setProducts] = useState([]);
     useEffect(() => {
         setProducts( [ { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
@@ -24,7 +25,7 @@ export const BestContainer = (props) => {
     
     
     return <div>
-        <SelectionView sort={props.sort} />
+        <SelectionView products={products}/>
         <BestProducts sort={props.sort} products={products}/>
     </div>
 }
