@@ -1,9 +1,7 @@
 import React from 'react';
 import './product-box.scss';
 const ProductBox = (props) => {
-
     const image = require(`./../../assets/image/${props.product.img}`);
-   // const image1 = require(`./../../assets/image/product1.jpg`);
     return <div className="product-box-item">
         <div className="box-inner">
             <div className="box-item">

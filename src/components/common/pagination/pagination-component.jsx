@@ -12,15 +12,17 @@ const PaginationComponent = (props) => {
         const pages = Math.ceil(countAllProducts / VIEW_PRODUCTS);
         for (let i = 1; i <= pages; i++) {
            if (i === 1 || i === pages || i === current
-             || pages <= BUTTONS_TOTTAL
              || (current < BUTTONS_TOTTAL - 1 && i < BUTTONS_TOTTAL) 
-             || ( i + 1 === current || i - 1 === current)) {
-            p.push(i)
+             || ( i + 1 === current || i - 1 === current)
+             || ((pages - current <= 1) && pages - i < BUTTONS_TOTTAL - 1)
+             ) {
+            p.push(i);
            }
         }
         return p;
     }
     function change(p) {
+        if (current !== p)
         props.changePagination.next(p);
     }
 
