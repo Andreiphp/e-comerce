@@ -1,6 +1,19 @@
 import React from 'react';
 import './product-box.scss';
+import { FaRegEye, FaRegHeart } from 'react-icons/fa';
+import { useDispatch} from 'react-redux';
+import { updateActionReducer } from '../../reducers/wishlist-reduser';
 const ProductBox = (props) => {
+    const dispatch = useDispatch();
+   
+    console.log('produx');
+
+    function addWishList() {
+        dispatch(updateActionReducer(props.product))
+    }
+    function preView() {
+
+    }
     const image = require(`./../../assets/image/${props.product.img}`);
     return <div className="product-box-item">
         <div className="box-inner">
@@ -9,26 +22,32 @@ const ProductBox = (props) => {
                     <div className="box-image">
                         <a href="">
                             <span className="box-cover-image">
-                              <img src={image}></img>
+                                <img src={image}></img>
                             </span>
                             <span className="box-hover-image">
                                 <img src={image}></img>
                                 {/* <img src={image}></img> */}
                             </span>
                         </a>
-                        <div className="box-actions">
+                    </div>
+                    <div className="box-actions">
+                        <div className="box-actions-icon" onClick={preView}>
+                            <FaRegEye />
+                        </div>
 
+                        <div className="box-actions-icon" onClick={addWishList}>
+                            <FaRegHeart />
                         </div>
                     </div>
                     <div className="box-description">
                         <h2 className="box-title">
                             <a >
-                            Accumsan FusceAccumsan FusceAccumsan FusceAccumsan FusceAccumsan FusceAccumsan Fusce
+                                Accumsan FusceAccumsan FusceAccumsan FusceAccumsan FusceAccumsan FusceAccumsan Fusce
                             </a>
                         </h2>
                         <div className="box-price">
                             <span className="price">
-                                    135$
+                                135$
                             </span>
                         </div>
                         <div className="box-action-add">

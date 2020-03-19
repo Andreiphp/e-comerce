@@ -11,18 +11,25 @@
     color: #222;
     height: 44px;
     cursor: pointer;
+    position: relative;
 
 }
 .e-cart-count {
-    position: relative;
-    border-left: 1px solid #fff;
-    padding-left: 10px;
-    margin-left: 12px;
+    position: absolute;
+    top: 0px;
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 16px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+
 }
 .e-cart-count span {
-    display: inline-block;
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    max-width: 80px;
+    color: white;
+}
+.e-cart-title {
+    font-size: 25px;
 }

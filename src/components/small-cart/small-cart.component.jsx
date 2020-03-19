@@ -1,5 +1,6 @@
 import React from 'react';
 import './small-cart.css';
+import { FaOpencart } from 'react-icons/fa';
 const SmallCartComponent = (props) => {
     console.log('small cart');
 
@@ -8,14 +9,16 @@ const SmallCartComponent = (props) => {
     }
     return <div className="e-small-cart">
         <span className="e-cart">
-            <span className="e-cart-title">Корзина</span>
+            <span className="e-cart-title">
+                <FaOpencart/>
+            </span>
             <div className="e-cart-count">
                 <span>{props.cart.size}</span>
             </div>
         </span>
-        <div className="e-cart-panel">
+        {/* <div className="e-cart-panel">
             <button onClick={() => {deleteProduct(1)}}>удалить</button>
-        </div>
+        </div> */}
     </div>
 }
 

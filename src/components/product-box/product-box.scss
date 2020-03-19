@@ -57,6 +57,21 @@
                         right: 0;
                     }
                 }
+                .box-actions {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    font-size: 22px;
+                    .box-actions-icon {
+                        cursor: pointer;
+                        color: #4c85d1;
+                        transition: 0.5s;
+                        z-index: 100;
+                        &:hover {
+                            color: #0d5bc2;
+                        }
+                    }
+                }
                 .box-description {
                     position: relative;
                     padding: 10px 10px 0 10px;
