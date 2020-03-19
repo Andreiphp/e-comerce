@@ -2,6 +2,8 @@ import React from 'react';
 import './pagination.scss';
 import { VIEW_PRODUCTS, BUTTONS_TOTTAL } from './pagination.config';
 import { useMemo } from 'react';
+import { ChangePage } from '../../../helpers/subscribers-functions';
+
 const PaginationComponent = (props) => {
     console.log('pagination');
     const countAllProducts = props.countAllProducts;
@@ -23,7 +25,7 @@ const PaginationComponent = (props) => {
     }
     function change(p) {
         if (current !== p)
-        props.changePagination.next(p);
+        ChangePage.next(p)
     }
 
     return <div className="e-pagination">

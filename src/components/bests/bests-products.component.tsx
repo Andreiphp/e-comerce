@@ -3,8 +3,9 @@ import { useContext } from 'react';
 import { SelectionContext } from '../../context/selection-view';
 import ProductBox from '../product-box/product-box-component';
 import ProductList from '../product-box/produx-list.container';
+import { Product } from '../../interfaces/interfase';
 import './bests-component.scss';
-const ProductsComponets = (position, product) => {
+const ProductsComponets = (position: string, product: Product) => {
     if (position === 'block') {
         return <ProductBox product={product} />
     } else {
@@ -12,9 +13,9 @@ const ProductsComponets = (position, product) => {
     }
 };
 
-const loadProducts = (position, products) => {
+const loadProducts = (position: string, products: Product[]) => {
     if (products.length) {
-        return products.map(product => {
+        return products.map((product: any) => {
             return ProductsComponets(position, product)
         })
     } else {
@@ -22,9 +23,10 @@ const loadProducts = (position, products) => {
     }
 }
 
-const BestProducts = (props) => {
-    const position = useContext(SelectionContext);
+const BestProducts = (props: any) => {
+    const position: any = useContext(SelectionContext);
     const products = props.products;
+
     return <div className="e-products-box">
         {loadProducts(position.stateContext, products)}
     </div>
