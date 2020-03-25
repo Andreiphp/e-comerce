@@ -1,9 +1,9 @@
 import React from 'react';
-import { subjectWishList } from './../../../helpers/subscribers-functions';
+import { subjectWishList } from '../../../helpers/subscribers-functions';
 import { useEffect } from 'react';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-const ViewProductsWishListComponent = (props) => {
+const ViewProductsWishListComponent = (props: any) => {
     const _unsubscribe = new Subject();
     useEffect(() => {
         subjectWishList.pipe(takeUntil(_unsubscribe)).subscribe(list => {

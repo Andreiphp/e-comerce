@@ -30,3 +30,21 @@ export interface StateProductsCat {
     count: number;
     currentPage: number;
 }
+
+export interface Category {
+    id: number;
+    title: string;
+}
+export interface WishList {
+    wishList: any;
+    default: any
+}
+
+export interface WishListItems {
+    id: number;
+    title: string,
+    products: any;
+    created: Date,
+    state: string
+
+}

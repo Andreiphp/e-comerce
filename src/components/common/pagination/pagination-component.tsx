@@ -4,12 +4,12 @@ import { VIEW_PRODUCTS, BUTTONS_TOTTAL } from './pagination.config';
 import { useMemo } from 'react';
 import { ChangePage } from '../../../helpers/subscribers-functions';
 
-const PaginationComponent = (props) => {
+const PaginationComponent = (props: any) => {
     console.log('pagination');
-    const countAllProducts = props.countAllProducts;
-    const current = props.current;
+    const countAllProducts: number = props.countAllProducts;
+    const current: number = props.current;
     let links = useMemo(() => pages(), [countAllProducts, current]);
-    function pages() {
+    function pages(): number[] {
         const p = [];
         const pages = Math.ceil(countAllProducts / VIEW_PRODUCTS);
         for (let i = 1; i <= pages; i++) {
@@ -23,9 +23,9 @@ const PaginationComponent = (props) => {
         }
         return p;
     }
-    function change(p) {
+    function change(p: number): void {
         if (current !== p)
-        ChangePage.next(p)
+        ChangePage.next(p);
     }
 
     return <div className="e-pagination">

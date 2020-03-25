@@ -1,11 +1,12 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, SyntheticEvent } from 'react';
 import './selection-view.scss';
-import { SelectionContext } from './../../../context/selection-view';
+import { SelectionContext } from '../../../context/selection-view';
 import { useDispatch, useSelector } from 'react-redux';
 import { sortAction } from '../../../reducers/selection-reducers';
-const SelectionView = (props) => {
-    const position = useContext(SelectionContext);
-    const currentSort = useSelector(state => state.sort);
+import { Store } from '../../../interfaces/interfase';
+const SelectionView = (props: any) => {
+    const position: any = useContext(SelectionContext);
+    const currentSort = useSelector((state: Store) => state.sort);
     const dispath = useDispatch();
     let classBlock;
     let classList;
@@ -17,8 +18,8 @@ const SelectionView = (props) => {
         classList = 'rigth-active';
     }
 
-    function changeSort(event) {
-        dispath(sortAction(event.currentTarget.value));
+    function changeSort(event: SyntheticEvent) {
+        dispath(sortAction(event.currentTarget.nodeValue));
     }
     return (
         <div>

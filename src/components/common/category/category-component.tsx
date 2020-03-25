@@ -5,13 +5,15 @@ import Axios from 'axios';
 import { GiHamburgerMenu } from "react-icons/gi";
 import './category-component.scss';
 import { NavLink } from 'react-router-dom';
-function ItemsCategories(categories) {
-    return categories.map(cat => {
+import { Category } from '../../../interfaces/interfase';
+function ItemsCategories(categories: Category[]) {
+    return categories.map((cat: Category) => {
         return <li key={cat.id}><NavLink to={`/category/${cat.id}`}>{cat.title}</NavLink></li>
     });
 }
-const Category = (props) => {
-    const [category, setCategory] = useState([]);
+const CategoryComponent = (props: any) => {
+    const initCategory: Category[] = []
+    const [category, setCategory] = useState(initCategory);
     const [isOpen, setOpenenMenu] = useState(false);
     useEffect(() => {
         Axios.get('http://localhost:8080/router/get_categories').then(category => {
@@ -38,4 +40,4 @@ const Category = (props) => {
     </div>
 }
 
-export default Category;
+export default CategoryComponent;

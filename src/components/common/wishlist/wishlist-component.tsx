@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './wishlist.scss';
-import { addNewListReducer } from './../../../reducers/wishlist-reduser';
-import  WishListItems from './wishlist-items-component';
+import { addNewListReducer } from '../../../reducers/wishlist-reduser';
+import  WishListItemsComponent from './wishlist-items-component';
+import { Store } from '../../../interfaces/interfase';
 
-const WishList = (props) => {
-    const list = useSelector(state => state.wishlist);
+const WishListComponent = (props: any) => {
+    const list = useSelector((state: Store) => state.wishlist);
     console.log(list);
     const dispatch = useDispatch();
     const [newList, setList] = useState('');
@@ -24,7 +25,7 @@ const WishList = (props) => {
         </div>
         <div className=''>
             {list.wishList.length > 0 && <div>
-                <WishListItems list={list} />
+                <WishListItemsComponent list={list} />
             </div>}
             {!list.wishList.length && <div>
                 список желаний пуст
@@ -33,4 +34,4 @@ const WishList = (props) => {
     </div>
 }
 
-export default WishList;
+export default WishListComponent;

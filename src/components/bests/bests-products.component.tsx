@@ -15,7 +15,7 @@ const ProductsComponets = (position: string, product: Product) => {
 
 const loadProducts = (position: string, products: Product[]) => {
     if (products.length) {
-        return products.map((product: any) => {
+        return products.map((product: Product) => {
             return ProductsComponets(position, product)
         })
     } else {

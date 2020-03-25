@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { defaultActionReduser } from './../../../reducers/wishlist-reduser';
-import { countProducts } from './../../../helpers/other-functions';
-import { subjectWishList } from './../../../helpers/subscribers-functions';
-const WishListItems = (props) => {
+import { defaultActionReduser } from '../../../reducers/wishlist-reduser';
+import { countProducts } from '../../../helpers/other-functions';
+import { subjectWishList } from '../../../helpers/subscribers-functions';
+const WishListItemsComponent = (props: any) => {
     console.log(props.list.wishList);
     console.log(props.list.default);
     const dispatch = useDispatch();
-    function changeDefault(title) {
+    function changeDefault(title: string) {
         dispatch(defaultActionReduser(title));
     }
     function loadProductsWishList(list) {
@@ -22,10 +22,12 @@ const WishListItems = (props) => {
                 <span onClick={() => {
                     loadProductsWishList(item);
                 }}>показать</span>
-                <span><input disabled={item.title === props.list.default} checked={item.title === props.list.default} type="checkbox" onChange={() => { changeDefault(item.title) }}></input></span>
+                <span><input disabled={item.title === props.list.default} 
+                checked={item.title === props.list.default} type="checkbox" 
+                onChange={() => { changeDefault(item.title) }}></input></span>
                 <span>удалить</span>
             </li>
         })}
     </ul>
 }
-export default WishListItems;
+export default WishListItemsComponent;

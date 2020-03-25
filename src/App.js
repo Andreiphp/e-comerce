@@ -10,7 +10,7 @@ import { SelectionContext, position } from './context/selection-view';
 import Axios from 'axios';
 import CategoriesComponent from './components/categories/categories-component';
 import CategoriesList from './components/categories/categories-list.component';
-import WishList from './components/common/wishlist/wishlist-component';
+import WishListComponent from './components/common/wishlist/wishlist-component';
 function App(props) {
   Axios.post('http://localhost:8080/router/authenticate', {
     login: 'werty@yandex.by',
@@ -42,7 +42,7 @@ function App(props) {
             <Route  path="/home" render={() => <HomeContainer />}></Route>
             <Route  path="/best" render={() => <BestContainer />}></Route>
             <Route  path="/search" render={() => <SearchPageComponent />}></Route>
-            <Route  path="/wishlist" render={() => <WishList />}></Route>
+            <Route  path="/wishlist" render={() => <WishListComponent />}></Route>
             {/* <Route exact path="/category" component={CategoriesComponent}></Route> */}
             <Route exact path="/category/:id?" component={CategoriesList}></Route>
             {/* <Route render={() => <div>not found</div>}></Route> */}
