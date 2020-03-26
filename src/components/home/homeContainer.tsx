@@ -2,7 +2,7 @@ import React from 'react';
 import SliderProduct from '../slider-small/slider-small-component';
 import ProductBox from '../product-box/product-box-component';
 import SliderRecomended from '../slider-recomended/slider-recomended.component';
-const HomeContainer = (props) => {
+const HomeContainer = (props: any) => {
     console.log('home page');
     return <>
         <div className="e-home">

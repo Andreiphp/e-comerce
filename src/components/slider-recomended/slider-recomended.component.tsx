@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './slider-recomended.sass';
 import ProductBox from '../product-box/product-box-component';
-const SliderRecomended = (props) => {
+const SliderRecomended = (props: any) => {
     const [count, setcount] = useState(0);
     const [sliders, setSliders] = useState([]);
     const [activeTabs, setActiveTabs] = useState(0);
@@ -19,7 +19,7 @@ const SliderRecomended = (props) => {
             transform: 0
         },
     });
-   function delimiterSliders() {
+   function delimiterSliders(): number {
        const count = sliders.length;
         if (count > 6) {
             return Math.ceil(count / 2);
@@ -36,8 +36,8 @@ const SliderRecomended = (props) => {
             { id: '4', name: 'ytrewq', img: 'ui.jpg', link: '' },
             { id: '5', name: 'ytrewq', img: 'ui.jpg', link: '' },
             { id: '6', name: 'ytrewq', img: 'ui.jpg', link: '' },
-        ])
-        const defaultelenet = document.getElementById('e-slider-outer');
+        ] as any)
+        const defaultelenet: any = document.getElementById('e-slider-outer');
         const mainwidth = defaultelenet.getBoundingClientRect().width;
         setStyle({
             outer: { width: (mainwidth / visibleSliders) * delimiterSliders() },
@@ -73,7 +73,7 @@ const SliderRecomended = (props) => {
                 { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
                 { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
                 { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
-            ])
+            ] as any)
         }
         if (activeTabs === 1) {
             setSliders([
@@ -81,7 +81,7 @@ const SliderRecomended = (props) => {
                 { id: '1', name: 'werty', img: 'product2.jpg', link: '' },
                 { id: '1', name: 'werty', img: 'product2.jpg', link: '' },
                 { id: '1', name: 'werty', img: 'product2.jpg', link: '' },
-            ])
+            ] as any)
         }
         if (activeTabs === 2) {
             setSliders([
@@ -95,16 +95,16 @@ const SliderRecomended = (props) => {
                 { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
                 { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
                 { id: '1', name: 'werty', img: 'product1.jpg', link: '' },
-            ])
+            ] as any)
         }
         
     }, [activeTabs]);
 
-    function changeTabs(num) {
+    function changeTabs(num: number): void {
         setActiveTabs(num);
     }
 
-    function activecontrolLeft() {
+    function activecontrolLeft(): void {
         if (visibleSliders === delimiterSliders()) {
             return;
         }
@@ -130,7 +130,7 @@ const SliderRecomended = (props) => {
             return returnTransform;
         }
     }
-    function activecontrolRigth() {
+    function activecontrolRigth(): void {
         if (visibleSliders === delimiterSliders()) {
             return;
         }
@@ -161,9 +161,9 @@ const SliderRecomended = (props) => {
             <span className="e-slider-title">Популярное</span>
             <div className="e-slider-tabs">
                 <ul>
-                    <li><span onClick={()=>{changeTabs(0)}} className={{ 'active': activeTabs === 0 }}>Новинки</span></li>
-                    <li><span onClick={()=>{changeTabs(1)}} className={{ 'active': activeTabs === 1 }}>Популярное</span></li>
-                    <li><span onClick={()=>{changeTabs(2)}} className={{ 'active': activeTabs === 2 }}>Скидки</span></li>
+                    <li><span onClick={()=>{changeTabs(0)}} className={{ 'active': activeTabs === 0 } as any}>Новинки</span></li>
+                    <li><span onClick={()=>{changeTabs(1)}} className={{ 'active': activeTabs === 1 } as any}>Популярное</span></li>
+                    <li><span onClick={()=>{changeTabs(2)}} className={{ 'active': activeTabs === 2 } as any}>Скидки</span></li>
                 </ul>
             </div>
             <div className="e-slider-control e-flex">

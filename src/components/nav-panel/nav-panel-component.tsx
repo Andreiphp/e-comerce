@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './nav-panel-component.sass';
 import CategoryComponent from '../common/category/category-component';
-const NavPanellFull = (props) => {
+const NavPanellFull = (props: any) => {
     return <div className="e-nav-full">
         <div className="e-container">
             <div className="e-nav-wrapper">

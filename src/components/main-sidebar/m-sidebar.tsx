@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-const MainSidebar = (props) => {
+const MainSidebar = (props: any) => {
     return <div className="e-menu">
         <ul className="e-menu-content">
             <li>

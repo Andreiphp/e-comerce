@@ -1,7 +1,8 @@
 import React, { useRef, memo } from 'react';
 import './search.scss';
 import { IoIosClose } from 'react-icons/io';
-function ActionPreview(products, close, startsearch) {
+import { Product } from '../../interfaces/interfase';
+function ActionPreview(products: Product[], close: any, startsearch: any) {
     if (products.length) {
         return <>
             <div className="search-close">
@@ -12,24 +13,25 @@ function ActionPreview(products, close, startsearch) {
         return <></>
     }
 }
-const SearchComponent = ({ onChange, preview, flagOpen, close: closeProps, startsearch }) => {
-    const rev = useRef('');
-    function close() {
-        rev.current.value = '';
-        closeProps(false);
+const SearchComponent = (props: any) => {
+    const refInputSearch: any = useRef('');
+
+    function close(): void {
+        refInputSearch.current.value  = '';
+        props.closeProps(false);
     }
 
     return (<div className="">
         <div className="form-control">
-            <input className="e-searchInput" placeholder="поиск" type="text" ref={rev} onChange={onChange} />
-            <button disabled={!rev.current.value} type="button" className="e-btn-search" onClick={startsearch}>
+            <input className="e-searchInput" placeholder="поиск" type="text" ref={refInputSearch} onChange={props.onChange} />
+            <button disabled={!refInputSearch.current.value} type="button" className="e-btn-search" onClick={props.startsearch}>
                 найти
         </button>
-            {flagOpen &&
+            {props.flagOpen &&
                 (<div className="search-preview">
-                    {ActionPreview(preview, close, startsearch)}
+                    {ActionPreview(props.preview, close, props.startsearch)}
                     <ul>
-                        {preview.length > 0 && preview.map(product => {
+                        {props.preview.length > 0 && props.preview.map((product: Product) => {
                             return <li key={product.id}>{product.title}</li>
                         })}
                     </ul>

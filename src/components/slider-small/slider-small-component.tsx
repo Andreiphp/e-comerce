@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './slider-small.sass';
-const SliderProduct = (props) => {
+import { Product } from '../../interfaces/interfase';
+const SliderProduct = (props: any) => {
     const [count, setcount] = useState(0);
     const [flagUploads, setUploads] = useState(false);
     const [visibleSliders, setVisiblesliders] = useState(3)
@@ -18,7 +19,7 @@ const SliderProduct = (props) => {
     });
 
     useEffect(() => {
-        const defaultelenet = document.getElementById('e-slider-outer');
+        const defaultelenet: any = document.getElementById('e-slider-outer');
         const mainwidth = defaultelenet.getBoundingClientRect().width;
         setStyle({
             outer: { width: (mainwidth / visibleSliders) * props.products.length },
@@ -99,7 +100,7 @@ const SliderProduct = (props) => {
             <div id="e-slider-outer" className="e-slider-outer">
                 <div className="e-sl-stage"
                     style={{ width: styleSlider.outer.width, transform: "translate(" + styleSlider.outerTransform.transform + 'px,' + " 0px)" }}>
-                    {props.products.map(product => {
+                    {props.products.map((product: Product) => {
                         const image = require(`./../../assets/image/${product.img}`);
                         return <div key={product.id} className="e-sl-item" style={styleSlider.item}>
                             <div className="e-sl-item-inner">
@@ -110,7 +111,7 @@ const SliderProduct = (props) => {
                                         </div>
                                         <div className={ props.type === 'brands' ? 'e-sl-title hide_title' : 'e-sl-title'}>
                                             <h2 className="e-catName">
-                                                <a>{product.name}</a>
+                                                <a>{product.title}</a>
                                             </h2>
                                         </div>
                                     </div>

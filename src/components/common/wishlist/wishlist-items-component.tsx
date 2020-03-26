@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { defaultActionReduser } from '../../../reducers/wishlist-reduser';
 import { countProducts } from '../../../helpers/other-functions';
 import { subjectWishList } from '../../../helpers/subscribers-functions';
+import { WishListItems } from '../../../interfaces/interfase';
 const WishListItemsComponent = (props: any) => {
     console.log(props.list.wishList);
     console.log(props.list.default);
@@ -10,11 +11,11 @@ const WishListItemsComponent = (props: any) => {
     function changeDefault(title: string) {
         dispatch(defaultActionReduser(title));
     }
-    function loadProductsWishList(list) {
+    function loadProductsWishList(list: any) {
         subjectWishList.next(list);
     }
     return <ul>
-        {props.list.wishList.map(item => {
+        {props.list.wishList.map((item: WishListItems) => {
             return <li className="wishlist-items" key={item.title}>
                 <span>{item.title}</span>
                 <span>{countProducts(item.products)}</span>

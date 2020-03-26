@@ -1,7 +1,7 @@
 import React from 'react';
 import './product-list.scss';
-import {FaOpencart, FaRegEye, FaRegHeart} from 'react-icons/fa';
-const ProductList = (props) => {
+import { FaOpencart, FaRegEye, FaRegHeart } from 'react-icons/fa';
+const ProductList = (props: any) => {
     const image = require(`./../../assets/image/${props.product.img}`);
     return <div className="e-product-list">
         <article className="e-product-full">
@@ -22,18 +22,18 @@ const ProductList = (props) => {
                             <span>{props.product.price}</span>
                         </div>
                         <div className="e-product-description-short">
-                          {props.product.minidescription}
+                            {props.product.minidescription}
                         </div>
                         <div className="e-product-actions">
                             <ul>
                                 <li className="e-product-add">
-                                    <span><FaOpencart/></span>
+                                    <span><FaOpencart /></span>
                                 </li>
                                 <li className="e-product-add">
-                                    <span><FaRegEye/></span>
+                                    <span><FaRegEye /></span>
                                 </li>
                                 <li className="e-product-add">
-                                    <span><FaRegHeart/></span>
+                                    <span><FaRegHeart /></span>
                                 </li>
                             </ul>
                         </div>

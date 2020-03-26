@@ -1,10 +1,10 @@
 import React from 'react';
 import './small-cart.css';
 import { FaOpencart } from 'react-icons/fa';
-const SmallCartComponent = (props) => {
+const SmallCartComponent = (props: any) => {
     console.log('small cart');
 
-    function deleteProduct(id) {
+    function deleteProduct(id: number): void {
         props.deleteProductAction(id);
     }
     return <div className="e-small-cart">

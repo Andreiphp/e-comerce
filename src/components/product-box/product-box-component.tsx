@@ -3,7 +3,7 @@ import './product-box.scss';
 import { FaRegEye, FaRegHeart } from 'react-icons/fa';
 import { useDispatch} from 'react-redux';
 import { updateActionReducer } from '../../reducers/wishlist-reduser';
-const ProductBox = (props) => {
+const ProductBox = (props: any) => {
     const dispatch = useDispatch();
    
     console.log('produx');

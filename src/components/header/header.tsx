@@ -2,10 +2,10 @@ import React from 'react';
 import './header.css';
 import { NavLink } from 'react-router-dom';
 import logos from './../../assets/image/logo.jpg';
-import SearchContainer from './../search/search-container';
+import SearchContainer from '../search/search-container';
 import SmallCartContainerComponent from '../small-cart/small-cart.container.component';
 import WishListSmallComponent from '../common/wishlist/wishlist-small-component';
-const HeaderComponent = (props) => {
+const HeaderComponent = (props: any) => {
     console.log('header');
     
     return <div className="">

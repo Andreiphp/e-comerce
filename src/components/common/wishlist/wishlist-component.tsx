@@ -14,7 +14,7 @@ const WishListComponent = (props: any) => {
         dispatch(addNewListReducer(newList));
         setList('');
     }
-    function setNewList(e) {
+    function setNewList(e: any) {
         setList(e.target.value);
     }
     return <div>
