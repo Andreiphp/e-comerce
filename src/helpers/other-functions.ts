@@ -1,10 +1,19 @@
+import { WishList, WishListItems } from "../interfaces/interfase";
 
-export function countProducts(productsObj: any): number {
-    let count = 0;
-    for (let id in productsObj) {
-        if (productsObj.hasOwnProperty(id)) {
-            count += +productsObj[id];
-        }
+export function countProducts(productsId: number[]): number {
+
+    return productsId.length;
+}
+
+export function MaxId(list: WishList): number {
+    let id = 1;
+    if (list.wishList.length) {
+        list.wishList.forEach((w: WishListItems) => {
+            if (id <= w.id) {
+                id = w.id;
+            }
+        });
+        id += 1;
     }
-    return count;
+    return id
 }

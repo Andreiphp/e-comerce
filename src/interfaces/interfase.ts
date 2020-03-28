@@ -36,15 +36,15 @@ export interface Category {
     title: string;
 }
 export interface WishList {
-    wishList: any;
+    wishList: WishListItems[];
     default: any
 }
 
 export interface WishListItems {
     id: number;
     title: string,
-    products: any;
-    created: Date,
+    products: number[];
+    created: string,
     state: string
 
 }

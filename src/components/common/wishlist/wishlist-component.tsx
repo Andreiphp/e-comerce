@@ -4,6 +4,7 @@ import './wishlist.scss';
 import { addNewListReducer } from '../../../reducers/wishlist-reduser';
 import  WishListItemsComponent from './wishlist-items-component';
 import { Store } from '../../../interfaces/interfase';
+import ViewProductsWishListComponent from './view-products-wishlist.component';
 
 const WishListComponent = (props: any) => {
     const list = useSelector((state: Store) => state.wishlist);

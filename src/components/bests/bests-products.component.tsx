@@ -1,17 +1,10 @@
 import React from 'react';
 import { useContext } from 'react';
 import { SelectionContext } from '../../context/selection-view';
-import ProductBox from '../product-box/product-box-component';
-import ProductList from '../product-box/produx-list.container';
 import { Product } from '../../interfaces/interfase';
 import './bests-component.scss';
-const ProductsComponets = (position: string, product: Product) => {
-    if (position === 'block') {
-        return <ProductBox product={product} />
-    } else {
-        return <ProductList product={product} />
-    }
-};
+import { ProductsComponets } from '../../helpers/common-jsx';
+
 
 const loadProducts = (position: string, products: Product[]) => {
     if (products.length) {

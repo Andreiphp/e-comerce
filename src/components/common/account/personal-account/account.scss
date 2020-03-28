@@ -1,0 +1,14 @@
+.account {
+    color: black;
+    a {
+        color: black;
+    }
+    .account-nav-list {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        li {
+            margin: 0 10px;
+        }
+    }
+}
